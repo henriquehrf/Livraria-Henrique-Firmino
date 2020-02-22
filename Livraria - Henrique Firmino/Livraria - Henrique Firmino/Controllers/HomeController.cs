@@ -23,6 +23,13 @@ namespace Livraria___Henrique_Firmino.Controllers
 			return View();
 		}
 
+		[HttpGet]
+		public IActionResult Teste(){
+
+
+			return View();
+		}
+
 		public IActionResult Privacy()
 		{
 			return View();

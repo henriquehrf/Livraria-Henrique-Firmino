@@ -1,0 +1,24 @@
+﻿.gradeDeLivros {
+	width: 100%;
+	border: solid 1px;
+	border-radius: 25px;
+}
+
+	.gradeDeLivros p {
+		position: relative;
+		margin-bottom: 2px;
+		margin-left: 20px;
+	}
+
+	.gradeDeLivros img {
+		float: right;
+		position: relative;
+		margin-right: 2vw;
+		margin-top: 10px;
+	}
+
+	.gradeDeLivros button {
+		margin: 5px;
+		position:relative;
+		left: calc(100% - 180px);		
+	}

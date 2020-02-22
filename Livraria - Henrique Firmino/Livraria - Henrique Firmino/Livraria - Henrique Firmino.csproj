@@ -5,6 +5,10 @@
     <RootNamespace>Livraria___Henrique_Firmino</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AngularJS.Core" Version="1.7.9" />
+  </ItemGroup>
+
 
 
 </Project>

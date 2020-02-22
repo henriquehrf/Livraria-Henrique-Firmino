@@ -3,7 +3,7 @@
 		templateUrl: "view/gradeDeLivros.html",
 		restrict: "E",
 		scope: {
-			title: "="
+			conteudo: "="
 		},
 
 		link: function (scope, element, attr) {

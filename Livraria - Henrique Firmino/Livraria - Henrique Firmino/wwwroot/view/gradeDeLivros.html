@@ -1,14 +1,18 @@
-﻿<div class="gradeDeLivros">
-	<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
-	<p>Título: Henrique</p>
-	<p>Gênero: Teste</p>
-	<p>Data de publicação: 12/12/19</p>
-	<p>Páginas: 24pág</p>
-	<p>Autor: José do Rego</p>
-	<p>Editora: Fake Editora</p>
-	<p>Descrição: Fake Descrição</p>
-	<p>Sinopse: Fake Sinopse</p>
-	<p>URL: www.gooogle.com</p>
-	<button type="button" class="btn btn-primary">Editar</button>
-	<button type="button" class="btn btn-secondary">Excluir</button>
+﻿<div>
+	<filtro-da-grade conteudo="conteudo"></filtro-da-grade>
+	{{conteudo.ordenacaoDaBusca}}
+	<div class="gradeDeLivros" ng-repeat="livro in conteudo.livros | filter : conteudo.termoDeBusca">
+		<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+		<p>Título: {{livro.Titulo}}</p>
+		<p>Gênero: {{livro.Genero}}</p>
+		<p>Data de publicação: {{livro.DataPublicacao}}</p>
+		<p>Páginas: {{livro.Paginas}}pág</p>
+		<p>Autor: {{livro.Autor}}</p>
+		<p>Editora: {{livro.Editora}}</p>
+		<p>Descrição: {{livro.Descricao}}</p>
+		<p>Sinopse: {{livro.Sinopse}}</p>
+		<p>URL: {{livro.Links}}</p>
+		<button type="button" class="btn btn-primary">Editar</button>
+		<button type="button" class="btn btn-secondary">Excluir</button>
+	</div>
 </div>

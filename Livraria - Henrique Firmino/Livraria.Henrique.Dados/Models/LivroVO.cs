@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Livraria___Henrique_Firmino.Models
 {
-	public class Livro
+	public class LivroVO
 	{
 		[Key]
 		[Column(Order = 1)]

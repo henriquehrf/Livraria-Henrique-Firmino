@@ -5,17 +5,16 @@ namespace Livraria.Henrique.Dados
 {
 	public class LivroContext : DbContext
 	{
-		public DbSet<Livro> Livro { get; set; }
+		public DbSet<LivroVO> Livro { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
 
 			modelBuilder
-				.Entity<Livro>()
+				.Entity<LivroVO>()
 				.ToTable("Livros")
 				.HasKey("Id");
-
 		}
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -1,6 +1,9 @@
-﻿using Livraria___Henrique_Firmino.Models;
+﻿using Livraria.Henrique.Dados.DAO;
+using Livraria___Henrique_Firmino.Models;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Net;
 
 namespace Livraria___Henrique_Firmino.Controllers
 {
@@ -8,16 +11,37 @@ namespace Livraria___Henrique_Firmino.Controllers
 	[Route("api/[controller]/[action]")]
 	public class LivroController : ControllerBase
 	{
-
 		[HttpGet]
-		public IActionResult SImplesRequisicao()
+		public IList<LivroVO> RetornarTodosLivros()
 		{
-			return new ContentResult()
-			{
-				Content = JsonConvert.SerializeObject(new Livro() { Titulo = "Henrique", Pagina = 10 }),
-				ContentType = "application/json; charset=utf-8",
-				StatusCode = 200
-			};
+			var livroDao = new LivroDAO();
+			return livroDao.RetornarTodos();
+		}
+
+		[HttpPost]
+		public IActionResult InserirUmLivro(LivroVO livro)
+		{
+			var livroDao = new LivroDAO();
+			livroDao.Inserir(livro);
+			return Ok();
+		}
+
+		[HttpPut]
+		public IActionResult AlterarUmLivro(LivroVO livro)
+		{
+
+			var livroDao = new LivroDAO();
+			livroDao.Alterar(livro);
+			return Ok();
+		}
+
+		[HttpDelete]
+		public IActionResult RemoverUmLivro(LivroVO livro)
+		{
+			var livroDao = new LivroDAO();
+			livroDao.Excluir(livro);
+			return Ok();
+
 		}
 	}
 }

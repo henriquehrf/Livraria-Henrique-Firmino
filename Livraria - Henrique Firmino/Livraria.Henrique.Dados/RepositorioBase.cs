@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Livraria.Henrique.Dados
 {
-	public class RepositorioBase<T> : IRepositorio<T> where T : class
+	public class RepositorioBase<T> : IDisposable, IRepositorio<T> where T : class
 	{
 		protected readonly LivroContext _contexto;
 
@@ -18,6 +18,11 @@ namespace Livraria.Henrique.Dados
 		{
 			_contexto.Update<T>(obj);
 			_contexto.SaveChanges();
+		}
+
+		public void Dispose()
+		{
+			_contexto.Dispose();
 		}
 
 		public virtual void Excluir(T obj)

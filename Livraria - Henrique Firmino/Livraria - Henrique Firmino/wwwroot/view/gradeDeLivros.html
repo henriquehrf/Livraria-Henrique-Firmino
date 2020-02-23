@@ -3,15 +3,15 @@
 	{{conteudo.ordenacaoDaBusca}}
 	<div class="gradeDeLivros" ng-repeat="livro in conteudo.livros | filter : conteudo.termoDeBusca">
 		<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
-		<p>Título: {{livro.Titulo}}</p>
-		<p>Gênero: {{livro.Genero}}</p>
-		<p>Data de publicação: {{livro.DataPublicacao}}</p>
-		<p>Páginas: {{livro.Paginas}}pág</p>
-		<p>Autor: {{livro.Autor}}</p>
-		<p>Editora: {{livro.Editora}}</p>
-		<p>Descrição: {{livro.Descricao}}</p>
-		<p>Sinopse: {{livro.Sinopse}}</p>
-		<p>URL: {{livro.Links}}</p>
+		<p>Título: {{livro.titulo}}</p>
+		<p>Gênero: {{livro.genero}}</p>
+		<p>Data de publicação: {{livro.dataPublicacao}}</p>
+		<p>Páginas: {{livro.pagina}}pág</p>
+		<p>Autor: {{livro.autor}}</p>
+		<p>Editora: {{livro.editora}}</p>
+		<p>Descrição: {{livro.descricao}}</p>
+		<p>Sinopse: {{livro.sinopse}}</p>
+		<p>URL: {{livro.links}}</p>
 
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".cd-example-modal-lg" ng-click="editarLivro(livro)">Editar</button>
 		<div class="modal fade cd-example-modal-lg" tabindex="-1" role="dialog">

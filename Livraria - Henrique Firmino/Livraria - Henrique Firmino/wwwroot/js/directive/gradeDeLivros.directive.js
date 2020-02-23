@@ -1,4 +1,4 @@
-﻿app.directive("gradeDeLivros", function () {
+﻿app.directive("gradeDeLivros", ["carregadorDeLivrosDaGrade", function (carregadorDeLivrosDaGrade) {
 	return {
 		templateUrl: "view/gradeDeLivros.html",
 		restrict: "E",
@@ -7,6 +7,14 @@
 		},
 
 		link: function (scope, element, attr) {
+
+			window.onload = function () {
+				let aoFinalizar = function (livros) {
+					scope.conteudo.livros = livros;
+				};
+				carregadorDeLivrosDaGrade.retornarTodosLivros(aoFinalizar);
+			};
+
 			scope.editarLivro = function (livro) {
 				scope.conteudo.livro = livro;
 			};
@@ -16,4 +24,4 @@
 			};
 		}
 	};
-});
+}]);

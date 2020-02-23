@@ -14,7 +14,7 @@ namespace Livraria___Henrique_Firmino.Controllers
 		{
 			return new ContentResult()
 			{
-				Content = JsonConvert.SerializeObject(new Livro() { Nome = "Henrique", Pagina = 10 }),
+				Content = JsonConvert.SerializeObject(new Livro() { Titulo = "Henrique", Pagina = 10 }),
 				ContentType = "application/json; charset=utf-8",
 				StatusCode = 200
 			};

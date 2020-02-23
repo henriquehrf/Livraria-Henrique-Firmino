@@ -3,19 +3,22 @@
 		templateUrl: "view/livro.html",
 		restrict: "E",
 		scope: {
-			conteudo: "=",
+			conteudo: "="
 		},
 
 		link: function (scope, element, attr) {
-
 			scope.salvarFormulario = function () {
-
 				if (!scope.conteudo.livros)
 					scope.conteudo.livros = [];
 
-				scope.conteudo.livros.push(scope.livro);
-				scope.livro = null;
+				if (!scope.conteudo.livro.id) {
+					scope.conteudo.livro.id = scope.conteudo.livros.length;
+					scope.conteudo.livros.push(scope.conteudo.livro);
+				}
+
+				scope.conteudo.livro = null;
 			};
+
 		}
 	};
 });

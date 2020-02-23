@@ -12,7 +12,15 @@
 		<p>Descrição: {{livro.Descricao}}</p>
 		<p>Sinopse: {{livro.Sinopse}}</p>
 		<p>URL: {{livro.Links}}</p>
-		<button type="button" class="btn btn-primary">Editar</button>
-		<button type="button" class="btn btn-secondary">Excluir</button>
+
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".cd-example-modal-lg" ng-click="editarLivro(livro)">Editar</button>
+		<div class="modal fade cd-example-modal-lg" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<livro conteudo="conteudo"></livro>
+				</div>
+			</div>
+		</div>
+		<button type="button" class="btn btn-secondary" ng-click="excluirLivro(livro)">Excluir</button>
 	</div>
 </div>

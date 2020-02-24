@@ -3,6 +3,7 @@ using Livraria___Henrique_Firmino.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 
 namespace Livraria___Henrique_Firmino.Controllers
@@ -35,7 +36,7 @@ namespace Livraria___Henrique_Firmino.Controllers
 			return Ok();
 		}
 
-		[HttpDelete]
+		[HttpPost]
 		public IActionResult RemoverUmLivro(LivroVO livro)
 		{
 			var livroDao = new LivroDAO();

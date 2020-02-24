@@ -19,7 +19,7 @@ namespace Livraria.Henrique.Dados
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("Server=devsmovere.brazilsouth.cloudapp.azure.com,1040;Database=LivrariaDB;integrated security=false; user=henriquefirmino; pwd=MN0EALRkxADv;");
+			optionsBuilder.UseSqlServer("Server=//;Database=//;integrated security=false; user=//; pwd=//;");
 		}
 	}
 }

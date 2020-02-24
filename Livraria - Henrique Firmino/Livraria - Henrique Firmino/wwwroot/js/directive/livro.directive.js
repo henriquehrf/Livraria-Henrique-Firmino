@@ -11,18 +11,17 @@
 				if (!scope.conteudo.livros)
 					scope.conteudo.livros = [];
 
+				let aoSalvar = function () {
+					let aoFinalizar = function (livros) {
+						scope.conteudo.livros = livros;
+					};
+					carregadorDeLivrosDaGrade.retornarTodosLivros(aoFinalizar);
+				};
+
 				if (!scope.conteudo.livro.id)
 					salvarLivro.salvarLivro(scope.conteudo.livro, aoSalvar);
 				else
 					alterarLivro.alterarLivro(scope.conteudo.livro, aoSalvar);
-
-				let aoSalvar = function () {
-					let aoFinalizar = function (livros) {
-						scope.conteudo.livros = livros;
-						console.log(livros);
-					};
-					carregadorDeLivrosDaGrade.retornarTodosLivros(aoFinalizar);
-				};
 
 				scope.conteudo.livro = null;
 			};

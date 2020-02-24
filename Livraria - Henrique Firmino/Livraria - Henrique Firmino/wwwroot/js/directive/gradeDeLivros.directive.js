@@ -1,4 +1,4 @@
-﻿app.directive("gradeDeLivros", ["carregadorDeLivrosDaGrade", function (carregadorDeLivrosDaGrade) {
+﻿app.directive("gradeDeLivros", ["carregadorDeLivrosDaGrade", "excluirLivro", function (carregadorDeLivrosDaGrade, excluirLivro) {
 	return {
 		templateUrl: "view/gradeDeLivros.html",
 		restrict: "E",
@@ -20,7 +20,16 @@
 			};
 
 			scope.excluirLivro = function (livro) {
-				scope.conteudo.livros.splice(scope.conteudo.livros.indexOf(livro), 1);
+
+				let aoExcluir = function () {
+					let aoFinalizar = function (livros) {
+						scope.conteudo.livros = livros;
+					};
+					carregadorDeLivrosDaGrade.retornarTodosLivros(aoFinalizar);
+				};
+
+				console.log(livro);
+				excluirLivro.excluirLivro(livro, aoExcluir);
 			};
 		}
 	};
